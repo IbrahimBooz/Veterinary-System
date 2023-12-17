@@ -10,6 +10,7 @@ import java.util.List;
 @Service
 public class CustomerManager implements ICustomerService {
 
+    //Is where we override and customize our methods
     private final CustomerRepo customerRepo;
 
     public CustomerManager(CustomerRepo customerRepo) {
@@ -54,7 +55,6 @@ public class CustomerManager implements ICustomerService {
     public Customer getByName(String name) {
         return this.customerRepo.findByName(name);
     }
-
 
 
 }

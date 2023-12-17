@@ -74,3 +74,6 @@ The veterinary management system project is designed as API through which a vete
 <li>Add, update, view and delete doctors' available days</li>
 
 </ul>
+
+<h2>Endpoint</h2>
+<p>To check endpoints of the project, you can take a look at the (endpoint.md) file.</p>

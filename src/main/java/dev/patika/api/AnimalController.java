@@ -8,10 +8,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @RestController
 @RequestMapping("/animal")
 public class AnimalController {
 
+    //Is where we do our mapping and customize it
     private final IAnimalService animalService;
 
     public AnimalController(IAnimalService animalService) {

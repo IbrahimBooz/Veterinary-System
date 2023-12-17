@@ -11,7 +11,7 @@ import java.util.List;
 @Table(name = "Animal")
 @Data
 public class Animal {
-
+    // We define our entity tables and columns
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", columnDefinition = "serial")
@@ -41,11 +41,11 @@ public class Animal {
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private Customer customer;
 
-    @OneToMany(mappedBy = "animal", cascade =CascadeType.REMOVE)
+    @OneToMany(mappedBy = "animal", cascade = CascadeType.REMOVE)
     @JsonIgnore
     private List<Vaccine> vaccineList;
 
-    @OneToMany(mappedBy = "animal", cascade =CascadeType.REMOVE)
+    @OneToMany(mappedBy = "animal", cascade = CascadeType.REMOVE)
     @JsonIgnore
     private List<Appointment> appointmentList;
 

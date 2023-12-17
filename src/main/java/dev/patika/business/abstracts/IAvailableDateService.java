@@ -1,9 +1,12 @@
 package dev.patika.business.abstracts;
 
 import dev.patika.entities.AvailableDate;
+
 import java.util.List;
 
 public interface IAvailableDateService {
+
+    //Where crud processing takes place
     AvailableDate getByID(Long id);
 
     AvailableDate save(AvailableDate availableDate);
@@ -13,7 +16,6 @@ public interface IAvailableDateService {
     AvailableDate update(AvailableDate availableDate);
 
     List<AvailableDate> findAll();
-
 
 
 }

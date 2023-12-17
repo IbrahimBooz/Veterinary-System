@@ -7,9 +7,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface AnimalRepo extends JpaRepository<Animal,Long> {
-    Animal findByName(String name);
+public interface AnimalRepo extends JpaRepository<Animal, Long> {
 
+    //We extends the repository to be able to use Jpa features.
+    Animal findByName(String name);
 
     List<Animal> findByCustomerId(Long customer_id);
 

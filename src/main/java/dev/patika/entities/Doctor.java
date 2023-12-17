@@ -16,6 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Doctor {
+    // We define our entity tables and columns
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", columnDefinition = "serial")
@@ -38,14 +39,13 @@ public class Doctor {
     private String city;
 
 
-    @OneToMany(mappedBy = "doctor" , cascade =CascadeType.REMOVE)
+    @OneToMany(mappedBy = "doctor", cascade = CascadeType.REMOVE)
     @JsonIgnore
     private List<Appointment> appointmentList;
 
-    @OneToMany(mappedBy = "doctor" , cascade =CascadeType.REMOVE)
+    @OneToMany(mappedBy = "doctor", cascade = CascadeType.REMOVE)
     @JsonIgnore
     private List<AvailableDate> availableDateList;
-
 
 
 }

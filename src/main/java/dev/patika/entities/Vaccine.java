@@ -15,12 +15,13 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Vaccine {
+    // We define our entity tables and columns
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", columnDefinition = "serial")
     private Long id;
 
-    @Column(name = "name", length = 100, unique = false)
+    @Column(name = "name", length = 100, unique = true)
 
     private String name;
 
@@ -35,7 +36,6 @@ public class Vaccine {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "animal_id", referencedColumnName = "id")
-
     private Animal animal;
 
 }

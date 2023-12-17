@@ -12,6 +12,8 @@ import java.util.List;
 @RequestMapping("/date")
 public class AvailableController {
 
+    //Is where we do our mapping and customize it
+
     private final IAvailableDateService availableDateService;
 
     public AvailableController(IAvailableDateService availableDateService) {
@@ -48,7 +50,6 @@ public class AvailableController {
     public String delete(@PathVariable("id") Long id) {
         return this.availableDateService.delete(id);
     }
-
 
 
 }

@@ -11,6 +11,8 @@ import java.util.List;
 @Service
 public class AvailableDateManager implements IAvailableDateService {
 
+    //Is where we override and customize our methods
+
     private final AvailableDateRepo availableDateRepo;
 
     public AvailableDateManager(AvailableDateRepo availableDateRepo) {

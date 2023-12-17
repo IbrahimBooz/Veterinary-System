@@ -18,7 +18,9 @@ import java.util.List;
 @RequestMapping("/vaccine")
 public class VaccineController {
 
-    private  final IVaccineService vaccineService;
+    //Is where we do our mapping and customize it
+
+    private final IVaccineService vaccineService;
 
     public VaccineController(IVaccineService vaccineService) {
         this.vaccineService = vaccineService;
@@ -51,7 +53,7 @@ public class VaccineController {
 
     @DeleteMapping("/delete/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public String delete(@PathVariable ("id") Long id){
+    public String delete(@PathVariable("id") Long id) {
         return this.vaccineService.delete(id);
     }
 
@@ -61,7 +63,7 @@ public class VaccineController {
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
         List<Vaccine> vaccines = vaccineService.findAllByProtectionStartDateBetween(startDate, endDate);
-        if (vaccines.isEmpty()){
+        if (vaccines.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         return ResponseEntity.ok(vaccines);

@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 
 public class Appointment {
+    // We define our entity tables and columns
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", columnDefinition = "serial")

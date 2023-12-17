@@ -16,6 +16,8 @@ import java.util.List;
 @RequestMapping("/appointment")
 public class AppointmentController {
 
+    //Is where we do our mapping and customize it
+
     private final IAppointmentService appointmentService;
 
     public AppointmentController(IAppointmentService appointmentService) {
@@ -52,27 +54,28 @@ public class AppointmentController {
     public String delete(@PathVariable("id") Long id) {
         return this.appointmentService.delete(id);
     }
+
     @GetMapping("/getByAnimalIdBetween")
     @ResponseStatus(HttpStatus.OK)
     public List<Appointment> listApoByAnimalIdBetween(
             @RequestParam("startDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate startDate,
-            @RequestParam("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd")LocalDate endDate,
-            @RequestParam("animalId") long id){
+            @RequestParam("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate endDate,
+            @RequestParam("animalId") long id) {
 
         LocalDateTime startDateTime = startDate.atStartOfDay();
-        LocalDateTime endDateTime = endDate.atTime(23,59,59);
-        return appointmentService.findByAnimalIdBetweenDates(startDateTime,endDateTime,id);
+        LocalDateTime endDateTime = endDate.atTime(23, 59, 59);
+        return appointmentService.findByAnimalIdBetweenDates(startDateTime, endDateTime, id);
     }
 
     @GetMapping("/getByDoctorIdBetween")
     @ResponseStatus(HttpStatus.OK)
     public List<Appointment> listApoByDoctorIdBetween(
             @RequestParam("startDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate startDate,
-            @RequestParam("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd")LocalDate endDate,
-            @RequestParam("doctorId") long id){
+            @RequestParam("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate endDate,
+            @RequestParam("doctorId") long id) {
         LocalDateTime startDateTime = startDate.atStartOfDay();
-        LocalDateTime endDateTime = endDate.atTime(23,59,59);
-        return appointmentService.findByDoctorIdBetweenDates(startDateTime,endDateTime,id);
+        LocalDateTime endDateTime = endDate.atTime(23, 59, 59);
+        return appointmentService.findByDoctorIdBetweenDates(startDateTime, endDateTime, id);
     }
 
 }

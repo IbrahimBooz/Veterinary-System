@@ -8,10 +8,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @RestController
 @RequestMapping("/doctor")
 public class DoctorController {
 
+    //Is where we do our mapping and customize it
     private final IDoctorService doctorService;
 
     public DoctorController(IDoctorService doctorService) {
@@ -45,7 +47,7 @@ public class DoctorController {
 
     @DeleteMapping("/delete/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public String delete(@PathVariable ("id") Long id){
+    public String delete(@PathVariable("id") Long id) {
         return this.doctorService.delete(id);
     }
 

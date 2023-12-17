@@ -12,8 +12,8 @@ import java.util.List;
 @Repository
 public interface AvailableDateRepo extends JpaRepository<AvailableDate, Long> {
 
+    //We extends the repository to be able to use Jpa features.
     List<AvailableDate> findByAvailableDateAndDoctorId(LocalDate availableDate, Long doctorId);
-
 
 
 }

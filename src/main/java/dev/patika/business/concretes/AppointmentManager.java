@@ -17,6 +17,7 @@ import java.util.List;
 @Service
 public class AppointmentManager implements IAppointmentService {
 
+    //Is where we override and customize our methods
     private final AvailableDateRepo availableDateRepo;
     private final AppointmentRepo appointmentRepo;
 
@@ -64,12 +65,12 @@ public class AppointmentManager implements IAppointmentService {
 
     @Override
     public List<Appointment> findByAnimalIdBetweenDates(LocalDateTime startDate, LocalDateTime endDate, Long animal_id) {
-        return this.appointmentRepo.findByAppointmentDateBetweenAndAnimalId(startDate,endDate,animal_id);
+        return this.appointmentRepo.findByAppointmentDateBetweenAndAnimalId(startDate, endDate, animal_id);
     }
 
     @Override
     public List<Appointment> findByDoctorIdBetweenDates(LocalDateTime startDate, LocalDateTime endDate, Long doctor_id) {
-        return this.appointmentRepo.findByAppointmentDateBetweenAndDoctorId(startDate,endDate,doctor_id);
+        return this.appointmentRepo.findByAppointmentDateBetweenAndDoctorId(startDate, endDate, doctor_id);
     }
 
 

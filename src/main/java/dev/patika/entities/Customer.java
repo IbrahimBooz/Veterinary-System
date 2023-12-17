@@ -16,31 +16,30 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Customer {
-
+    // We define our entity tables and columns
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", columnDefinition = "serial")
     private Long id;
 
-    @Column(name="name", length=100)
+    @Column(name = "name", length = 100)
     private String name;
 
     @Email
-    @Column(name="mail", unique = true)
+    @Column(name = "mail", unique = true)
     private String mail;
 
-    @Column(name="phone", length=100)
+    @Column(name = "phone", length = 100)
     private String phone;
 
 
-
-    @Column(name="address")
+    @Column(name = "address")
     private String address;
 
-    @Column(name="city")
+    @Column(name = "city")
     private String city;
 
-    @OneToMany(mappedBy = "customer" ,cascade =CascadeType.REMOVE)
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.REMOVE)
     @JsonIgnore // List olarak tuttuğumuz class'a tekrar dönmesini istemediğimiz yere yazarız.
     private List<Animal> animal;
 

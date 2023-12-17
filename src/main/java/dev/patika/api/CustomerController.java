@@ -11,6 +11,7 @@ import java.util.List;
 @RequestMapping("/customers")
 public class CustomerController {
 
+    //Is where we do our mapping and customize it
     private final ICustomerService customerService;
 
     public CustomerController(ICustomerService customerService) {
@@ -44,7 +45,7 @@ public class CustomerController {
 
     @DeleteMapping("/delete/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public String delete(@PathVariable ("id") Long id){
+    public String delete(@PathVariable("id") Long id) {
         return this.customerService.delete(id);
     }
 
@@ -54,7 +55,6 @@ public class CustomerController {
 
         return this.customerService.getByName(name);
     }
-
 
 
 }

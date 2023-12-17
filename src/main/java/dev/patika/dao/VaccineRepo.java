@@ -10,6 +10,8 @@ import java.util.List;
 
 @Repository
 public interface VaccineRepo extends JpaRepository<Vaccine, Long> {
+
+    //We extends the repository to be able to use Jpa features.
     Vaccine findByName(String name);
 
     Vaccine findByAnimalIdAndName(Long animal_id, String name);

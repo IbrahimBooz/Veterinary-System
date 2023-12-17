@@ -14,6 +14,7 @@ import java.util.List;
 @Service
 public class VaccineManager implements IVaccineService {
 
+    //Is where we override and customize our methods
     private final VaccineRepo vaccineRepo;
 
     public VaccineManager(VaccineRepo vaccineRepo) {
@@ -31,14 +32,13 @@ public class VaccineManager implements IVaccineService {
         Long animal_id = vaccine.getAnimal().getId();
         String name = vaccine.getName();
         Vaccine animalLastVaccine = vaccineRepo.findByAnimalIdAndName(animal_id, name);
-        if(animalLastVaccine == null){
+        if (animalLastVaccine == null) {
             return this.vaccineRepo.save(vaccine);
-        }
-        else {
+        } else {
             if (animalLastVaccine.getProtectionFinishDate().isBefore(vaccine.getProtectionStartDate())) {
                 return this.vaccineRepo.save(vaccine);
-            }else {
-                throw  new ResponseStatusException(HttpStatus.CONFLICT);
+            } else {
+                throw new ResponseStatusException(HttpStatus.CONFLICT);
             }
         }
     }
@@ -72,7 +72,7 @@ public class VaccineManager implements IVaccineService {
 
     @Override
     public List<Vaccine> findAllByProtectionStartDateBetween(LocalDate startDate, LocalDate finishDate) {
-        return this.vaccineRepo.findAllByProtectionStartDateBetween(startDate,finishDate);
+        return this.vaccineRepo.findAllByProtectionStartDateBetween(startDate, finishDate);
     }
 
     @Override
