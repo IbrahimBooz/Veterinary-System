@@ -9,8 +9,6 @@
 | `/animal/delete/{id}`          | DELETE | Delete animal record          |
 | `/animal/getByCustomerId/{id}` | GET    | Animal listing by customer id |
 
-
-
 ## Customer
 
 | Endpoint                      | Method | Description            |
