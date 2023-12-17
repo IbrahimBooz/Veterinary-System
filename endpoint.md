@@ -13,13 +13,13 @@
 
 | Endpoint                      | Method | Description            |
 |-------------------------------|--------|------------------------|
-| `/customers/get`              | GET    | List all customers     |
-| `/customers/getById/{id}`     | GET    | Get customer by Id     |
-| `/customers/getByName/{name}` | GET    | Get customer by name   |
-| `/customers/getPets/{id}`     | GET    | Get pets of customer   |
-| `/customersadd`               | POST   | Add new customer       |
-| `/customers/update`           | PUT    | Update customer record |
-| `/customers/delete/{id}`      | DELETE | Delete customer record |
+| `/customer/get`              | GET    | List all customers     |
+| `/customer/getById/{id}`     | GET    | Get customer by Id     |
+| `/customer/getByName/{name}` | GET    | Get customer by name   |
+| `/customer/getPets/{id}`     | GET    | Get pets of customer   |
+| `/customer/add`               | POST   | Add new customer       |
+| `/customer/update`           | PUT    | Update customer record |
+| `/customer/delete/{id}`      | DELETE | Delete customer record |
 
 ## Doctor
 
